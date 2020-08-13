@@ -1,4 +1,9 @@
-This fork has made changes  
+# Fork
+## Reason for fork
+The purpose of this fork is to showcase the effect that the change that the Manning's n value has on a tsunami.
+
+## Changes made in this fork
+This fork has made changes to the /notebooks/geoclaw directory. There are changes in both the Chile2010a and Chile2010b directories. In each, there is the addition of a setrun_alt.py file, and changes made within the chile2010x.ipynb file.
 
 ---
 # Clawpack Applications Repository
