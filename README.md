@@ -5,6 +5,9 @@ The purpose of this fork is to showcase the effect that the change that the Mann
 ## Changes made in this fork
 This fork has made changes to the /notebooks/geoclaw directory. There are changes in both the Chile2010a and Chile2010b directories. In each, there is the addition of a setrun_alt.py file, and changes made within the chile2010x.ipynb file.
 
+### Note
+This is my first repository on github, and I am really using this as a quick means to an end to show people who need to view my work. Thus, I do not intend to become familiar with and adhere to good practices of maintaining a repository. Therefore please do not take this to be anything other than a fork for my own personal use, but that if you wish to use, you are more than welcome to.  
+
 ---
 # Clawpack Applications Repository
 
