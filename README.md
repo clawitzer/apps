@@ -6,7 +6,7 @@ The purpose of this fork is to showcase the effect that the change that the Mann
 This fork has made changes to the /notebooks/geoclaw directory. There are changes in both the Chile2010a and Chile2010b directories. In each, there is the addition of a setrun_alt.py file, and a chile2010x_alt.ipynb file.
 
 ## How to use
-Simply run the chile2010x_alt.ipynb. If you encounter problems, and have followed the CLAWPACK installation guide as given [here](https://www.clawpack.org/installing.html#pip-install), check out the installation_guide.md file, which documents solutions to the issues I encountered during installation, and running the examples I am working with.
+Simply run the chile2010x_alt.ipynb. If you encounter problems, and have followed the CLAWPACK installation guide as given [here](https://www.clawpack.org/installing.html#pip-install), check out the installation_guide.md file, which documents solutions to the issues I encountered during installation, and running the examples I am working with. Please note that in the Makefile of the Chile2010a and b directories, I have inserted the flag detailed in the installation_guide.md, shown in problem titled 'Type mismatch - fortran'. If you encounter an error with a Makefile, please take off the flag and re-run. If this does not solve your issue, I suggest you search online. 
 
 ### Notes
 - This is my first repository on github, and I am really using this as a quick means to an end to show people who need to view my work. Thus, I do not intend to become familiar with and adhere to good practices of maintaining a repository. Therefore please do not take this to be anything other than a fork for my own personal use, but that if you wish to use, you are more than welcome to. 
