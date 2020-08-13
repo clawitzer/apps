@@ -3,10 +3,15 @@
 The purpose of this fork is to showcase the effect that the change that the Manning's n value has on a tsunami.
 
 ## Changes made in this fork
-This fork has made changes to the /notebooks/geoclaw directory. There are changes in both the Chile2010a and Chile2010b directories. In each, there is the addition of a setrun_alt.py file, and changes made within the chile2010x.ipynb file.
+This fork has made changes to the /notebooks/geoclaw directory. There are changes in both the Chile2010a and Chile2010b directories. In each, there is the addition of a setrun_alt.py file, and a chile2010x_alt.ipynb file.
 
-### Note
-This is my first repository on github, and I am really using this as a quick means to an end to show people who need to view my work. Thus, I do not intend to become familiar with and adhere to good practices of maintaining a repository. Therefore please do not take this to be anything other than a fork for my own personal use, but that if you wish to use, you are more than welcome to.  
+## How to use
+Simply run the chile2010x_alt.ipynb. If you encounter problems, and have followed the CLAWPACK installation guide as given [here](https://www.clawpack.org/installing.html#pip-install), check out the installation_guide.md file, which documents solutions to the issues I encountered during installation, and running the examples I am working with.
+
+### Notes
+- This is my first repository on github, and I am really using this as a quick means to an end to show people who need to view my work. Thus, I do not intend to become familiar with and adhere to good practices of maintaining a repository. Therefore please do not take this to be anything other than a fork for my own personal use, but that if you wish to use, you are more than welcome to. 
+- When I write chile2010x, the x represents either the 'a' or 'b' version. There is no actual file called chile2010x.ipynb, or chile2010x_alt.ipynb.
+- Since this is a work in progress, I do not advise following the markdown blocks in the chile2010x_alt.ipynb to rigourously, as they contain small descriptions I have added, but there is a chance the original md blocks may be misplaced or missing where they otherwise should be. If you are looking at this file to learn about this simulation, I recommend first going through the chile2010x.ipynb file, as this is the original CLAWPACK version, and then move to mine to observe the changes I've made.
 
 ---
 # Clawpack Applications Repository
