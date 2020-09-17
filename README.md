@@ -13,19 +13,23 @@ Install pip (if not already installed).
 Enter the following commands into the terminal:
 
 #-----------------------------------------------------------------------------------------------
+
 export CLAW_VERSION=v5.7.0  # used several places in next commands
-pip install --src=$HOME/clawpack_src --user -e \
-    git+https://github.com/clawpack/clawpack.git@$CLAW_VERSION#egg=clawpack-$CLAW_VERSION
+
+pip install --src=$HOME/clawpack_src --user -e git+https://github.com/clawpack/clawpack.git@$CLAW_VERSION#egg=clawpack-$CLAW_VERSION
+
 git clone https://github.com/clawitzer/apps.git $HOME/clawpack_src/clawpack-$CLAW_VERSION/apps # Install clawitzer/apps to $HOME/clawpack_src/clawpack-$CLAW_VERSION/apps
-echo 'export CLAW=$HOME/clawpack_src/clawpack-$CLAW_VERSION
-export FC=gfortran' | sudo tee -a '$HOME/.bashrc' # Write environment variables CLAW and FC to .bashrc config file
+
+echo 'export CLAW=$HOME/clawpack_src/clawpack-$CLAW_VERSION export FC=gfortran' | sudo tee -a '$HOME/.bashrc' # Write environment variables CLAW and FC to .bashrc config file
 
 #You may need to enter the next command seperately, as the previous command may require a password to initiate change.
-echo 'export CLAW=$HOME/clawpack_src/clawpack-$CLAW_VERSION
-export FC=gfortran' | sudo tee -a '$HOME/.profile' # Write environment variables CLAW and FC to .profile config file
+
+echo 'export CLAW=$HOME/clawpack_src/clawpack-$CLAW_VERSION export FC=gfortran' | sudo tee -a '$HOME/.profile' # Write environment variables CLAW and FC to .profile config file
 
 #-----------------------------------------------------------------------------------------------
+
 Now reboot your machine to allow machine and python to read new environment variables
+
 
 ## How to use
 Simply run the chile2010x_alt.ipynb. If you encounter problems, and have followed the CLAWPACK installation guide as given [here](https://www.clawpack.org/installing.html#pip-install), check out the installation_guide.md file, which documents solutions to the issues I encountered during installation, and running the examples I am working with. Please note that in the Makefile of the Chile2010a and b directories, I have inserted the flag detailed in the installation_guide.md, shown in problem titled 'Type mismatch - fortran'. If you encounter an error with a Makefile, please take off the flag and re-run. If this does not solve your issue, I suggest you search online. 
