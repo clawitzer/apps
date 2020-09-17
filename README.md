@@ -8,7 +8,11 @@ This fork has made changes to the /notebooks/geoclaw directory. There are change
 
 ## Installation
 
-Install pip (if not already installed).
+If the following are not already installed:
+
+- Install pip (if not already installed).
+
+- Install gfortran (You can use a different fortran compiler, but change the parts which mention 'gfortran' to the name of your fortran compiler).
 
 Enter the following commands into the terminal:
 
