@@ -1,9 +1,9 @@
 # Installation environment
 
-To install CLAWPACK properly, I ran Arch **Linux** and followed the [pip installation](https://www.clawpack.org/installing.html#pip-install), using the Fortran compiler **Gfortran**, and **Jupyter notebook** for interfacing with code. The username for the machine in this guide is **jack**, so replace this with the username with your machine where necessary. **vim** is used as the text editor in this guide, so replace it with your preferred editor. If you are running a different terminal to **bash**, replace `~/.bashrc` with your shell's alternative (e.g `~/.zshrc)` for a zsh-based terminal.
+To install CLAWPACK (version mentioned below) properly, I ran Arch **Linux** and followed the [pip installation](https://www.clawpack.org/installing.html#pip-install), using the Fortran compiler **Gfortran**, and **Jupyter notebook** for interfacing with code. The username for the machine in this guide is **jack**, so replace this with the username with your machine where necessary. **vim** is used as the text editor in this guide, so replace it with your preferred editor. If you are running a different terminal to **bash**, replace `~/.bashrc` with your shell's alternative (e.g `~/.zshrc)` for a zsh-based terminal.
 Even if you are not running the same OS as in this guide, or running an alternative to another program mentioned here, this guide should point you in the right direction for fixes to be made on your device, you will just need to find out how to 'translate' these instructions to the service you are working with.
 
-# Initialise CLAWPACK version
+# CLAWPACK version
 
 export CLAW_VERSION=v5.7.0 #The CLAWPACK version this notebook runs on 
 
