@@ -1,8 +1,11 @@
 # Installation environment
 
-To install CLAWPACK (**v5.7.0**) properly, I ran Arch **Linux** and followed the [pip installation]([Installing Clawpack &#8212; Clawpack 5.7.0 documentation](https://www.clawpack.org/installing.html#pip-install)), using the Fortran compiler **Gfortran**, and **Jupyter notebook** for interfacing with code. The username for the machine in this guide is **jack**, so replace this with the username with your machine where necessary. **vim** is used as the text editor in this guide, so replace it with your preferred editor. If you are running a different terminal to **bash**, replace `~/.bashrc` with your shell's alternative (e.g `~/.zshrc)` for a zsh-based terminal.
+To install CLAWPACK properly, I ran Arch **Linux** and followed the [pip installation](https://www.clawpack.org/installing.html#pip-install), using the Fortran compiler **Gfortran**, and **Jupyter notebook** for interfacing with code. The username for the machine in this guide is **jack**, so replace this with the username with your machine where necessary. **vim** is used as the text editor in this guide, so replace it with your preferred editor. If you are running a different terminal to **bash**, replace `~/.bashrc` with your shell's alternative (e.g `~/.zshrc)` for a zsh-based terminal.
 Even if you are not running the same OS as in this guide, or running an alternative to another program mentioned here, this guide should point you in the right direction for fixes to be made on your device, you will just need to find out how to 'translate' these instructions to the service you are working with.
 
+# Initialise CLAWPACK version
+
+export CLAW_VERSION=v5.7.0 #The CLAWPACK version this notebook runs on 
 
 # During installation
 
@@ -19,13 +22,13 @@ https://www.clawpack.org/installing.html#pip-install
 This is the code block at which we need to adapt the instructions:
 
 ```
-export CLAW=$HOME/clawpack_src/clawpack-v5.7.0
+export CLAW=$HOME/clawpack_src/clawpack-$CLAW_VERSION
 export FC=gfortran
 ```
 
 Example where it occurs (**post installation**) :
 
-http://localhost:8888/notebooks/clawpack_src/clawpack-v5.7.0/apps/notebooks/geoclaw/chile2010a/chile2010a.ipynb
+http://localhost:8888/notebooks/clawpack_src/clawpack-$CLAW_VERSION/apps/notebooks/geoclaw/chile2010a/chile2010a.ipynb
 
 At first cell under the section *Compile and run the GeoClaw code*, with contents:
 
@@ -69,7 +72,7 @@ The commands must be inserted into configuration files to become permanent. Ente
 Insert these commands at the end of the file :
 
 ```
-export CLAW=$HOME/clawpack_src/clawpack-v5.7.0
+export CLAW=$HOME/clawpack_src/clawpack-$CLAW_VERSION
 export FC=gfortran
 ```
 
@@ -80,7 +83,7 @@ Save and exit the editor (vim).
 Insert these commands at the end of the file :
 
 ```
-export CLAW=$HOME/clawpack_src/clawpack-v5.7.0
+export CLAW=$HOME/clawpack_src/clawpack-$CLAW_VERSION
 export FC=gfortran
 ```
 
@@ -100,14 +103,14 @@ I recommend restarting your machine, then testing if these work.
 You can test whether you have set the environmental variables using running :
 
 ```
-printenv FC CLAW
+printenv CLAW FC
 ```
 
 Which if successful will output:
 
 ```
-/usr/bin/gfortran
-/home/jack/clawpack_src/clawpack-v5.7.0
+/home/jack/clawpack_src/clawpack-$CLAW_VERSION
+gfortran
 ```
 
 Rerunning the cell from the example, the output should now read :
@@ -133,7 +136,7 @@ If you don't get this, see the other **problem** entries for troubleshooting
 
 This error should occur for **any** CLAWPACK simulation that requires the library `clawutils` (which is probably all of them), but this is the location of an example where it occurs:
 
-http://localhost:8888/notebooks/clawpack_src/clawpack-v5.7.0/apps/notebooks/geoclaw/chile2010a/chile2010a.ipynb
+http://localhost:8888/notebooks/clawpack_src/clawpack-$CLAW_VERSION/apps/notebooks/geoclaw/chile2010a/chile2010a.ipynb
 
 At first cell under the section *Compile and run the GeoClaw code*, with contents:
 
@@ -156,7 +159,7 @@ compile_output.txt
 In the `compile_output.txt` file, at the bottom, it reads :
 
 ```
-/home/jack/clawpack_src/clawpack-v5.7.0/geoclaw/src/2d/shallow/filval.f90:154:51:
+/home/jack/clawpack_src/clawpack-$CLAW_VERSION/geoclaw/src/2d/shallow/filval.f90:154:51:
 
    95 |             call preintcopy(valc,mic,mjc,nvar,iclo,ichi,jclo,jchi,level-1,fliparray)
       |                                                                          2
@@ -164,8 +167,8 @@ In the `compile_output.txt` file, at the bottom, it reads :
   154 |                        jlo-nghost,jhi+nghost,level,1,1,fliparray)
       |                                                   1
 Error: Type mismatch between actual argument at (1) and actual argument at (2) (INTEGER(4)/REAL(8)).
-make: *** [/home/jack/clawpack_src/clawpack-v5.7.0/clawutil/src/Makefile.common:130: /home/jack/clawpack_src/clawpack-v5.7.0/geoclaw/src/2d/shallow/filval.o] Error 1
-make: *** [/home/jack/clawpack_src/clawpack-v5.7.0/clawutil/src/Makefile.common:274: new] Error 2
+make: *** [/home/jack/clawpack_src/clawpack-$CLAW_VERSION/clawutil/src/Makefile.common:130: /home/jack/clawpack_src/clawpack-v5.7.0/geoclaw/src/2d/shallow/filval.o] Error 1
+make: *** [/home/jack/clawpack_src/clawpack-$CLAW_VERSION/clawutil/src/Makefile.common:274: new] Error 2
 ```
 
 We can trace the error back to the file in the first line in this code block, which is a fortran 90 file.
@@ -174,7 +177,7 @@ We can trace the error back to the file in the first line in this code block, wh
 
 Find the *Makefile* you call when building the simulation (usually in the same folder as the notebook used to execute the simulation). In this example, it was located at :
 
-http://localhost:8888/edit/clawpack_src/clawpack-v5.7.0/apps/notebooks/geoclaw/chile2010a/Makefile
+http://localhost:8888/edit/clawpack_src/clawpack-$CLAW_VERSION/apps/notebooks/geoclaw/chile2010a/Makefile
 
 Around line 24, where it says
 
@@ -203,5 +206,3 @@ compile_output.txt
 If you don't get this, see the other **problem** entries for troubleshooting
 
 ---
-
-
