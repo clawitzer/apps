@@ -16,8 +16,7 @@ If the following are not already installed:
 
 Enter the following commands into the terminal:
 
-#-----------------------------------------------------------------------------------------------
-
+```
 export CLAW_VERSION=v5.7.0  # used several places in next commands
 
 pip install --src=$HOME/clawpack_src --user -e git+https://github.com/clawpack/clawpack.git@$CLAW_VERSION#egg=clawpack-$CLAW_VERSION
@@ -25,13 +24,11 @@ pip install --src=$HOME/clawpack_src --user -e git+https://github.com/clawpack/c
 git clone https://github.com/clawitzer/apps.git $HOME/clawpack_src/clawpack-$CLAW_VERSION/apps # Install clawitzer/apps to $HOME/clawpack_src/clawpack-$CLAW_VERSION/apps
 
 echo 'export CLAW=$HOME/clawpack_src/clawpack-$CLAW_VERSION export FC=gfortran' | sudo tee -a '$HOME/.bashrc' # Write environment variables CLAW and FC to .bashrc config file
-
-#You may need to enter the next command seperately, as the previous command may require a password to initiate change.
-
+```
+The next command is seperated from the above, as the previous command may require a password to initiate change, thus requiring use of the keyboard.
+```
 echo 'export CLAW=$HOME/clawpack_src/clawpack-$CLAW_VERSION export FC=gfortran' | sudo tee -a '$HOME/.profile' # Write environment variables CLAW and FC to .profile config file
-
-#-----------------------------------------------------------------------------------------------
-
+```
 Now reboot your machine to allow machine and python to read new environment variables
 
 
