@@ -89,18 +89,10 @@ export FC=gfortran
 
 Save and exit the editor (vim).
 
-In the terminal, enter the commands:
 
-```
-source ~/.profile
-source ~/.bashrc
-```
+Now restart your machine, and test if these work.
 
-Now the new configuration files should be set on your machine.
-
-I recommend restarting your machine, then testing if these work.
-
-You can test whether you have set the environmental variables using running :
+You can test whether you have set the environmental variables using running (in the command line):
 
 ```
 printenv CLAW FC

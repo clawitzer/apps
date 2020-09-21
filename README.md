@@ -14,23 +14,41 @@ If the following are not already installed:
 
 - Install [gfortran](https://gcc.gnu.org/wiki/GFortranBinaries) (You can use a different fortran compiler, but change the parts which mention 'gfortran' to the name of your fortran compiler).
 
-Enter the following commands into the terminal:
+If `vim` is not your preferred text editor, insert the name of your chosen editor instead (e.g `vi`, `nano`, etc.). If you are running a different terminal to bash, replace `~/.bashrc` with your shell's alternative (e.g `~/.zshrc` for a zsh-based terminal).
+
+1. Write environment variables: FC, CLAW, CLAW_VERSION; to .profile configuration file.
+
+`$ sudo vim ~/.profile`
+
+Enter the following lines at the bottom of the .profile file:
+```
+export CLAW_VERSION=v5.7.0 #CLAWPACK version for Clawitzer/apps
+export CLAW=$HOME/clawpack_src/clawpack-$CLAW_VERSION #CLAWPACK directory for Clawitzer/apps 
+export FC=gfortran #Name of Fortran compiler
+```
+Save and exit the editor.
+
+2. Write environment variables: FC, CLAW, CLAW_VERSION; to .bashrc configuration file.
+
+`$ sudo vim ~/.bashrc`
+
+Enter the following lines at the bottom of the .bashrc file:
 
 ```
-export CLAW_VERSION=v5.7.0  # used several places in next commands
-
-pip install --src=$HOME/clawpack_src --user -e git+https://github.com/clawpack/clawpack.git@$CLAW_VERSION#egg=clawpack-$CLAW_VERSION
-
-git clone https://github.com/clawitzer/apps.git $HOME/clawpack_src/clawpack-$CLAW_VERSION/apps # Install clawitzer/apps to $HOME/clawpack_src/clawpack-$CLAW_VERSION/apps
-
-echo 'export CLAW=$HOME/clawpack_src/clawpack-$CLAW_VERSION export FC=gfortran' | sudo tee -a '$HOME/.bashrc' # Write environment variables CLAW and FC to .bashrc config file
+export CLAW_VERSION=v5.7.0 #CLAWPACK version for clawitzer/apps
+export CLAW=$HOME/clawpack_src/clawpack-$CLAW_VERSION #CLAWPACK directory for Clawitzer/apps 
+export FC=gfortran #Name of Fortran compiler
 ```
-The next command is seperated from the above, as the previous command may require a password to initiate change, thus requiring use of the keyboard.
-```
-echo 'export CLAW=$HOME/clawpack_src/clawpack-$CLAW_VERSION export FC=gfortran' | sudo tee -a '$HOME/.profile' # Write environment variables CLAW and FC to .profile config file
-```
-Now reboot your machine to allow machine and python to read new environment variables
+Save and exit the editor.
 
+Now reboot your machine to allow machine and python to read new environment variables.
+
+3. Install CLAWPACK, and clawitzer/apps.
+```
+$ pip install --src=$HOME/clawpack_src --user -e git+https://github.com/clawpack/clawpack.git@$CLAW_VERSION#egg=clawpack-$CLAW_VERSION #Install CLAWPACK to $HOME/clawpack_src/clawpack-$CLAW_VERSION
+
+$ git clone https://github.com/clawitzer/apps.git $HOME/clawpack_src/clawpack-$CLAW_VERSION/apps #Install clawitzer/apps to $HOME/clawpack_src/clawpack-$CLAW_VERSION/apps
+```
 
 ## How to use
 Simply run the chile2010x_alt.ipynb. If you followed the above Installation section, please contact me if you've had issues. If you encounter problems, and have followed the CLAWPACK installation guide as given [here](https://www.clawpack.org/installing.html#pip-install); first ensure you have installed the version of CLAWPACK this notebook requires, then either check out the CLAWdoc_install_issues.md file - which documents solutions to the issues I encountered during installation - or follow the Installation section above or . Please note that in the Makefile of the Chile2010a and b directories, I have inserted the flag detailed in the CLAWdoc_install_issues.md file, shown in problem titled 'Type mismatch - fortran'. If you encounter an error with a Makefile, please take off the flag and re-run. If this does not solve your issue, I suggest you search online. 
