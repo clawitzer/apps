@@ -58,7 +58,13 @@ $ git clone https://github.com/clawitzer/apps.git $HOME/clawpack_src/clawpack-$C
 
 ## How to use
 Start either JupyterLab or classic Jupyter notebook via the respective commands:
-`$ jupyter lab`
+
+```
+$ jupyter lab
+```
 or
-`$ jupyter notebook`
+```
+$ jupyter notebook
+```
+
 And enter the outputted URL in your browser. Once inside the jupyter software, navigate to chile2010x_alt.ipynb (located in $HOME/clawpack_src/clawpack-$CLAW_VERSION/apps/notebooks/geoclaw/chile2010x), and run the notebook. If you followed the above Installation section, please contact me if you've had issues. If you encounter problems, and have followed the CLAWPACK installation guide as given [here](https://www.clawpack.org/installing.html#pip-install); first ensure you have installed the version of CLAWPACK this notebook requires, then either check out the CLAWdoc_install_issues.md file - which documents solutions to the issues I encountered during installation - or follow the Installation section above. Please note that in the Makefile of the Chile2010a and b directories, I have inserted the flag detailed in the CLAWdoc_install_issues.md file, shown in problem titled 'Type mismatch - fortran'. If you encounter an error with a Makefile, please take off the flag and re-run. If this does not solve your issue, I suggest you search online.
