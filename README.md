@@ -5,12 +5,12 @@ The purpose of this fork is to further the showcasing ability of the chile2010a 
 ## Changes made in this fork
 This fork has made changes to the /notebooks/geoclaw directory. There are changes in both the Chile2010a and Chile2010b directories. In each, there is the addition of an installation_guide.md file, a setrun_alt.py file, and the gauge32412-actual-detide.png file - modified from the dart32412_comp-2.png file in /clawpack_src/clawpack-$CLAW_VERSION/geoclaw/examples/tsunami/chile2010
 
-### Notes
+# Notes
 - This is my first repository on github, and I am really using this as a quick means to an end to show people who need to view my work. Thus, I do not intend to become familiar with and adhere to good practices of maintaining a repository. Therefore please do not take this to be anything other than a fork for my own personal use, but that if you wish to use, you are more than welcome to. 
 - When I write chile2010x, the x represents either the 'a' or 'b' version. There is no actual file called chile2010x.ipynb, or chile2010x_alt.ipynb.
 - Since this is a work in progress, the markdown blocks in the chile2010x_alt.ipynb may have less detail than desired. They contain descriptions I feel are pertinent to the program, but if you are looking for more detail - I recommend first going through the chile2010x.ipynb file, as this is the original CLAWPACK version, and then move to mine to observe the changes I've made.
 
-## Installation
+# Installation
 
 If the following are not already installed:
 
@@ -68,3 +68,6 @@ $ jupyter notebook
 ```
 
 And enter the outputted URL in your browser. Once inside the jupyter software, navigate to chile2010x_alt.ipynb (located in $HOME/clawpack_src/clawpack-$CLAW_VERSION/apps/notebooks/geoclaw/chile2010x), and run the notebook. If you followed the above Installation section, please contact me if you've had issues. If you encounter problems, and have followed the CLAWPACK installation guide as given [here](https://www.clawpack.org/installing.html#pip-install); first ensure you have installed the version of CLAWPACK this notebook requires, then either check out the CLAWdoc_install_issues.md file - which documents solutions to the issues I encountered during installation - or follow the Installation section above. Please note that in the Makefile of the Chile2010a and b directories, I have inserted the flag detailed in the CLAWdoc_install_issues.md file, shown in problem titled 'Type mismatch - fortran'. If you encounter an error with a Makefile, please take off the flag and re-run. If this does not solve your issue, I suggest you search online.
+
+# More information
+For more information on the topic, check out the How_does_Bottom_Friction_affect_Tsunami_waves_.pdf file for extra details on a poster made about this software, and information about the mathematics beh
