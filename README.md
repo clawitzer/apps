@@ -1,3 +1,8 @@
+# IMPORTANT!
+This project has been moved to [https://gitlab.com/bittern/BotFricTsunami](https://gitlab.com/bittern/BotFricTsunami). Please visit this location for an updated version of this repository.
+
+---
+
 # Fork
 ## Reason for fork
 The purpose of this fork is to further the showcasing ability of the chile2010a and b file to better observe the effect that the change that the Manning's n value has on (a basic simulation of) a tsunami.
